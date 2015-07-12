@@ -19,14 +19,21 @@ module.exports = function (grunt) {
                 dest: 'build/js/scripts.js',    // output js file
             }
         },
+        
+        cssnext: {
+            dist: {
+                src: 'build/css/styles-compiled.css',
+                dest: 'build/css/styles-prefixed.css'
+            }
+        },
 
         watch: {                                // options for the watch function
             js: {                               // a 'sub-function' I called js that only watches my js folder
-                files: ['js/**/*.js'],          // 'watch' folder
+                files: ['js/**/*.js'],          // 'watch' this folder
                 tasks: ['concat:js']            // if there are changes, run this task
             },
             css: {                              // a 'sub-function' I called css that only watches my csss folder
-                files: ['sass/**/*.scss'],      // 'watch' folder
+                files: ['sass/**/*.scss'],      // 'watch' this folder
                 tasks: ['sass', 'cssnext']      // if there are changes, run these tasks
             }
         }
@@ -34,6 +41,7 @@ module.exports = function (grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-cssnext');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['sass', 'concat', 'watch']); // setup the default Grunt tasks that are run when we run only 'grunt' in the terminal
+    grunt.registerTask('default', ['sass', 'concat', 'cssnext', 'watch']); // setup the default Grunt tasks that are run when we run only 'grunt' in the terminal
 };
