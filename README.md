@@ -3,7 +3,7 @@
 
 *Developing out my Grunt Build System by Chris Sargent of [Sticky Pixel](http://www.stickypixel.com)*
 
-**Part 1 [Here}(https://github.com/ChrisSargent/Build-System-Tutorial-Part-1)**
+**Part 1 [Here](https://github.com/ChrisSargent/Build-System-Tutorial-Part-1)**
 - Install Grunt
 - Setup SASS Compiler
 - Setup Concatenate Javascript
