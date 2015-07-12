@@ -1,0 +1,17 @@
+/* ------ MAIN STYLE IMPORTS ------ */
+/* ------ RESET STYLES ------ */
+a {
+  text-decoration: none; }
+
+/* ------ LAYOUT STYLES ------ */
+div.test {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/* ------ TYPOGRAPHY STYLES ------ */
+p {
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* ----- END CSS ------ */
