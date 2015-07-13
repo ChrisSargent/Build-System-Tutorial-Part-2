@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         sass: {                                 // options for the sass compiler
             options: {
-                compress: false,                // don't minify the code
+                style: 'compressed',            // minify the code
                 sourcemap: 'none'               // don't create source maps
             },
             dist: {
@@ -13,31 +13,39 @@ module.exports = function (grunt) {
             }
         },
 
+        cssnext: {                              // options for cssnext function
+            dist: {
+                src: 'build/css/styles-compiled.css', // input css file
+                dest: 'build/css/styles.css'    // output css file
+            }
+        },
+    
         concat: {                               // options for the concat function
             js: {
                 src: ['js/**/*.js'],            // input - any file / folder in the js folder
-                dest: 'build/js/scripts.js',    // output js file
+                dest: 'build/js/scripts.js'     // output js file
             }
         },
         
-        cssnext: {
-            dist: {
-                src: 'build/css/styles-compiled.css',
-                dest: 'build/css/styles-prefixed.css'
-            }
+        jshint: {                               // options for the jshint function
+            options: {
+            //  strict: true                    // switch this line on for more strict linting
+            },
+            beforeconcat: ['Gruntfile.js', 'js/**/*.js'],   // input files before concatenation
+            afterconcat: ['build/js/scripts.js']            // input files after concatenation
         },
-
-        uglify: {
+        
+        uglify: {                               // options for the uglify function
             dist: {
-                src: 'build/js/scripts.js',
-                dest: 'build/js/scripts.min.js'
+                src: 'build/js/scripts.js',     // the input js file
+                dest: 'build/js/scripts.min.js' // the output, minified js file
             }
         },
         
         watch: {                                // options for the watch function
             js: {                               // a 'sub-function' I called js that only watches my js folder
                 files: ['js/**/*.js'],          // 'watch' this folder
-                tasks: ['concat:js', 'uglify']            // if there are changes, run this task
+                tasks: ['concat:js', 'jshint', 'uglify']  // if there are changes, run these tasks
             },
             css: {                              // a 'sub-function' I called css that only watches my csss folder
                 files: ['sass/**/*.scss'],      // 'watch' this folder
@@ -47,9 +55,10 @@ module.exports = function (grunt) {
 
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-cssnext');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['sass', 'concat', 'cssnext', 'uglify', 'watch']); // setup the default Grunt tasks that are run when we run only 'grunt' in the terminal
+    grunt.registerTask('default', ['sass', 'cssnext', 'concat', 'jshint', 'uglify', 'watch']); // setup the default Grunt tasks that are run when we run only 'grunt' in the terminal
 };

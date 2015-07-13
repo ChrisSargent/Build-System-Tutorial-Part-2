@@ -1,14 +1,1 @@
-/* ------ MAIN STYLE IMPORTS ------ */
-/* ------ RESET STYLES ------ */
-a {
-  text-decoration: none; }
-
-/* ------ LAYOUT STYLES ------ */
-div.test {
-  display: flex; }
-
-/* ------ TYPOGRAPHY STYLES ------ */
-p {
-  font-family: Arial, Helvetica, sans-serif; }
-
-/* ----- END CSS ------ */
+a{text-decoration:none}div.test{display:flex}p{font-family:Arial,Helvetica,sans-serif}
