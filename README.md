@@ -3,7 +3,9 @@
 
 *Developing out my Grunt Build System by Chris Sargent of [Sticky Pixel](http://www.stickypixel.com)*
 
-**Part 1 [Here](https://github.com/ChrisSargent/Build-System-Tutorial-Part-1)**
+CAVEAT! This isn't really meant to be a tutorial as such because this is the first time I've done this and I'm not sure I'm using best practices etc. I just wanted to write it to help me learn and maybe help someone else if they ran in to some of the same issues. I wrote it whilst setting up Grunt myself, predominantly inspired by this video: https://www.youtube.com/watch?v=TMKj0BxzVgw from Will at [Learn Code Academy](https://www.youtube.com/channel/UCVTlvUkGslCV_h-nSAId8Sw) and several videos from Travis at [Dev Tips](https://www.youtube.com/channel/UCyIe-61Y8C4_o-zZCtO4ETQ) (If you haven't already you should definitely check out their YouTube channels). I don’t follow it exactly because I’m setting it up for my workflow, but I was certainly inspired by the videos to do it. Another really good video is from Chris Coyier of CSS Tricks here: https://www.youtube.com/watch?v=Mr2VBRdRYak.
+
+**[Part 1](https://github.com/ChrisSargent/Build-System-Tutorial-Part-1)**
 - Install Grunt
 - Setup SASS Compiler
 - Setup Concatenate Javascript
